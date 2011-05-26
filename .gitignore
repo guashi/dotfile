@@ -1,25 +1,23 @@
 # ignore all directories and files 
-*/
 /*
 
 # readme
 !/README
 
 # bash related files
-!.bashrc
+!/.bashrc
 
 # vim related files
-!.vimrc
+!/.vimrc
 #!.gvimrc
 !/.vim/
-!/.vim/**/
-!/.vim/**/*
 /.vim/.netrwhist
 
 # git related files
-!.gitconfig
-!.gitignore_global
-!.gitignore
+!/.gitconfig
+!/.gitignore_global
+!/.gitignore
 
 # ctags
 !.ctags
+
