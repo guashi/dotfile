@@ -101,4 +101,39 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+############# user customized ###########
+
+# general
+alias du='du -h'
+alias df='df -sh'
+
+alias cd..='cd ..' 
+alias cd...='cd ../..' 
+alias cd...='cd ../../..' 
+
+
+# screenshots 
+alias screenshot='import -window root ~/Desktop/`date +%Y%m%d%H%M`.png' 
+
+# system info
+alias cpuu='ps -auxw --sort=%cpu'
+alias pg='ps aux |grep'  #require an argument
+
+# interactive
+alias rm='rm -vi'
+
+# editor
+export EDITOR='vim'
+export GIT_EDITOR='vim'
+
+# network
+alias ping='ping -c 10'
+
+# netinfo - show network information of the system
+netinfo ()
+{
+  /sbin/ifconfig | awk /'inet addr/ {print $2}'
+}
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM into shell session.
