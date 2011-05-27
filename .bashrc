@@ -111,6 +111,13 @@ alias df='df -sh'
 alias cd..='cd ..' 
 alias cd...='cd ../..' 
 alias cd...='cd ../../..' 
+# apt-get 
+alias acs='apt-cache search'
+alias agu='sudo apt-get update'
+alias agg='sudo apt-get upgrade'
+alias agd='sudo apt-get dist-upgrade'
+alias agi='sudo apt-get install'
+alias agr='sudo apt-get remove'
 
 
 # screenshots 
@@ -137,3 +144,5 @@ netinfo ()
 }
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM into shell session.
+
+export TERM=xterm-256color

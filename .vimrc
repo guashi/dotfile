@@ -179,6 +179,11 @@ map <C-H> <C-W>h
 
 map <C-S> :w! <CR>
 
+" Enable global COPY and PASTE
+nmap <C-V> "+P
+imap <C-V> <ESC><C-V>i
+vmap <C-C> "+y
+
 " Use <space> to PageDown
 nmap <Space> <C-f>
 
