@@ -1,9 +1,6 @@
 [user]
 	name = RobinShi
 	email = coolwind81@gmail.com
-[github]
-	user = RobinShi2010
-	token = 9ece6f1fd8317aa70db4cdb81f0e573a
 [core]
 	excludesfile = /home/robin/.gitignore_global
 	editor = vim
