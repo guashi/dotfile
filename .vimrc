@@ -1,10 +1,26 @@
 " A lot stolen from "The Ultimate .Vimrc file
 
 " http://spf13.com/post/ultimate-vim-config
+"
+" Environment variables configuation {
+"$HOME: where you can put custom config files,
+"       $HOME/.vim, $HOME/.vimrc in linux
+"       $HOME/vimfiles, $HOME/_vimrc in windows 
+"$VIMRUNTIM: default VIM runtime files
+"$MYVIMRC: the VIMRC path
+"$VIM:  the VIM command path
+if has("win32")
+  let $VIMFILES=$VIM.'/vimfiles'
+  let $V=$VIM.'/_vimrc'
+else
+  let $VIMFILES=$HOME.'/.vim'
+  let $V=$HOME.'/.vimrc'
+endif
+" }
 
 " Basic {
 set visualbell  "Disble bell
-set t_vb=".
+set t_vb="
 set nocompatible "No vi compatibility
 let mapleader="," " Mapleader
 set history=1000  " Keep (a lot) more history
@@ -234,10 +250,6 @@ let g:bufExplorerShowRelativePath=1
 nmap <leader>1 :BufExplorer<CR>
 " }
 
-" SuperTab {
-let g:SuperTabDefaultCompletionType = "context"
-" }
-
 " MRU(Most Recently Used){
 let MRU_Max_Entries=100
 let MRU_Exclude_Files='^/tmp/.*\|^/var/tmp/.*'  " For Linux
@@ -247,9 +259,31 @@ let MRU_Auto_Close=1
 nmap <leader>2 :MRU<cr>
 " }
 
-" VIM-Align{
+" SuperTab {
+let g:SuperTabDefaultCompletionType = "context"
+" }
+
+
+" VIM-Align {
 vmap <leader>t : Align
 " }
+
+" Vimwiki {
+" 
+"let g:wimkiki_list=[{'path': '', 
+    "\'html_header': '',
+    "\'html_footer': ''}]
+let g:vimwiki_camel_case=0
+"let g:vimwiki_hl_cb_checked=1
+let g:vimwiki_menu=''
+let g:vimwiki_CJK_length=1  " enable lenght counting for CJK
+let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,br,hr,div,code,del,h1'
+
+nmap <S-F4> :VimwikiAll2HTML<CR>
+nmap <F4> :Vimwiki2HTML<CR>
+nmap <F3> :Calendar<CR> " shortcut for Calendar plugin
+
+" } end Vimwiki
 
 " Zen coding {
 "let g:user_zen_expandabbr_key = "<c-e>"
