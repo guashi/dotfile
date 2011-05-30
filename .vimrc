@@ -1,5 +1,4 @@
 " A lot stolen from "The Ultimate .Vimrc file
-
 " http://spf13.com/post/ultimate-vim-config
 "
 " Environment variables configuation {
@@ -9,7 +8,7 @@
 "$VIMRUNTIM: default VIM runtime files
 "$MYVIMRC: the VIMRC path
 "$VIM:  the VIM command path
-if has("win32")
+if has('win32')
   let $VIMFILES=$VIM.'/vimfiles'
   let $V=$VIM.'/_vimrc'
 else
@@ -30,7 +29,6 @@ set nowritebackup
 
 " General {
 call pathogen#runtime_append_all_bundles()
-
 " Encodings {
 " termencoding => input/output
 " encoding     => VIM process/new file encoding
