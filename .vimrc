@@ -269,10 +269,21 @@ vmap <leader>t : Align
 " }
 
 " Vimwiki {
-" 
-"let g:wimkiki_list=[{'path': '', 
-    "\'html_header': '',
-    "\'html_footer': ''}]
+"
+if has("win32")
+  let vimwiki_path='d:/udisk/Dropbox/vimwiki/'
+else
+  let vimwiki_path=$HOME.'/vimwiki/'
+endif
+
+let vimwiki_src_path=vimwiki_path.'/src/'
+let vimwiki_html_path=vimwiki_path.'/html/'
+let g:vimwiki_list=[{
+      \'path': vimwiki_src_path, 
+      \'path_html': vimwiki_html_path,
+      \'auto_export': 1,
+      \'html_header': vimwiki_path.'/template/header.tpl',
+      \'html_footer': vimwiki_path.'/template/footer.tpl' }]
 let g:vimwiki_camel_case=0
 "let g:vimwiki_hl_cb_checked=1
 let g:vimwiki_menu=''
