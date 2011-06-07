@@ -7,3 +7,4 @@
 --regex-JavaScript=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\[/\1/a,array/
 --regex-JavaScript=/([^= ]+)[ \t]*=[ \t]*[^"\[]'[^'']*/\1/s,string/
 --regex-JavaScript=/([^= ]+)[ \t]*=[ \t]*[^'\[]"[^""]*/\1/s,string/
+
