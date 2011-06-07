@@ -28,6 +28,7 @@ set nowritebackup
 " }
 
 " General {
+"call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 " Encodings {
 " termencoding => input/output
@@ -311,21 +312,24 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Ctags {
 " Add current directory's generated tags file to available tags
-"set tags +=./tags
+set tags =tags;/
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
+" update ctags automatically when saving js file
+autocmd BufWritePost *.js silent! !eval 'ctags -R -o newtags; mv newtags tags' &
 
 " }
 
 " Taglist {
-"let Tlist_Ctags_Cmd='/usr/bin/ctags'
-"let Tlist_Show_One_File=1
+let Tlist_Ctags_Cmd='/usr/bin/ctags'
+let Tlist_Show_One_File=1
 "let Tlist_Exit_OnlyWindow=1
-"let Tlist_Use_Right_Window=1
+let Tlist_Use_Right_Window=1
 "let Tlist_WinWidth='auto'
-"nmap <silent><F8> :TlistToggle<CR>
+nmap <leader>3 :TlistToggle<CR>
+nmap <leader>ru :TlistUpdate<CR>
 
 "let g:tlist_javascript_settings='javascript;s:string;a:array;o:object;f:function;c:closure'
-"let g:tlist_javascript_settings='javascript;o:object;f:function;a:array;c:closure'
+let g:tlist_javascript_settings='javascript;o:object;f:function;a:array;c:closure;s:string'
 " }
 " }
 
