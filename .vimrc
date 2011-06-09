@@ -312,7 +312,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Ctags {
 " Add current directory's generated tags file to available tags
-set tags =tags;/
+set tags =./tags,tags
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 " update ctags automatically when saving js file
 autocmd BufWritePost *.js silent! !eval 'ctags -R -o newtags; mv newtags tags' &
@@ -329,7 +329,7 @@ nmap <leader>3 :TlistToggle<CR>
 nmap <leader>ru :TlistUpdate<CR>
 
 "let g:tlist_javascript_settings='javascript;s:string;a:array;o:object;f:function;c:closure'
-let g:tlist_javascript_settings='javascript;o:object;f:function;a:array;c:closure;s:string'
+let g:tlist_javascript_settings='js;o:object;f:function;c:closure;a:array;s:string;n:number;b:boolean'
 " }
 " }
 

@@ -1,10 +1,13 @@
---regex-JavaScript=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*new[ \t]+Object\(/\1/o,object/
---regex-JavaScript=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/o,object/
---regex-JavaScript=/([A-Za-z0-9._$()]+)[ \t]*[:=][ \t]*function[ \t]*\(/\1/f,function/
---regex-JavaScript=/function[ \t]+([A-Za-z0-9._$]+)[ \t]*\([^\]\)]*\)/\1/f,function/
---regex-JavaScript=/([A-Za-z_$][A-Za-z0-9._$]+)[ \t]*=[ \t]*(\(function[ \t]*\([^\)]*\))/\2/c,closure/
---regex-JavaScript=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*new[ \t]+Array\(/\1/a,array/
---regex-JavaScript=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\[/\1/a,array/
---regex-JavaScript=/([^= ]+)[ \t]*=[ \t]*[^"\[]'[^'']*/\1/s,string/
---regex-JavaScript=/([^= ]+)[ \t]*=[ \t]*[^'\[]"[^""]*/\1/s,string/
-
+--langdef=js
+--langmap=js:.js
+--regex-js=/([A-Za-z_$][A-Za-z0-9._$]+)[ \t]*[:=][ \t]*new[ \t]+([A-Za-z_$][A-Za-z0-9._$]+)\(/\1/o,object/
+--regex-js=/([A-Za-z_$][A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/o,object/
+--regex-js=/([A-Za-z_$][A-Za-z0-9._$]+)[ \t]*[:=][ \t]*function[ \t]*\(/\1/f,function/
+--regex-js=/function[ \t]([A-Za-z_$][A-Za-z0-9._$]+)[ \t]*\(/\1/f,function/
+--regex-js=/([A-Za-z_$][A-Za-z0-9._$]+)[ \t]*=[ \t]*\((function[ \t]*\([^\)]*\))\{/\2/c,closure/
+--regex-js=/([A-Za-z_$][A-Za-z0-9._$]+)[ \t]*[:=][ \t]*new[ \t]+Array\(/\1/a,array/
+--regex-js=/([A-Za-z_$][A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\[/\1/a,array/
+--regex-js=/([A-Za-z_$][A-Za-z0-9._$]+)[ \t]*[:=][ \t]*'[^']*'/\1/s,string/
+--regex-js=/([A-Za-z_$][A-Za-z0-9._$]+)[ \t]*[:=][ \t]*"[^"]*"/\1/s,string/
+--regex-js=/([A-Za-z_$][A-Za-z0-9._$]+)[ \t]*[:=][ \t]*[0-9]+/\1/n,number/
+--regex-js=/([A-Za-z_$][A-Za-z0-9._$]+)[ \t]*[:=][ \t]*(true|false)/\1/b,boolean/
