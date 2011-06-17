@@ -291,8 +291,8 @@ let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,br,hr,div,code,del,h1'
 
 nmap <S-F4> :VimwikiAll2HTML<CR>
 nmap <F4> :Vimwiki2HTML<CR>
-nmap <leader>wd :VimwikiDeletelink
-nmap <leader>wr :VimwikiRenamelink
+nmap <leader>wd :VimwikiDeletelink<CR>
+nmap <leader>wr :VimwikiRenamelink<CR>
 "nmap <F3> :Calendar<CR> " shortcut for Calendar plugin
 
 " } end Vimwiki
